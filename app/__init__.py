@@ -9,7 +9,7 @@ from .routes import task_bp
 load_dotenv()
 
 
-def create_app():
+def create_app(test_config=None):
     app = Flask(__name__)
 
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv(
@@ -17,6 +17,9 @@ def create_app():
     )
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "default-dev-key")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+    if test_config:
+        app.config.update(test_config)
 
     db.init_app(app)
     JWTManager(app)

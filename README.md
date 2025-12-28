@@ -64,6 +64,18 @@ flask run
 
 The API will be available at `http://127.0.0.1:5000`.
 
+### Testing
+
+1. **Run the flask app with testing db**:
+```bash
+DATABASE_URL=sqlite:///test.db uv run run.py
+```
+
+2. **Run the test script in another terminal**:
+```bash
+uv run test_api.py
+```
+
 
 ## 📖 API Documentation
 
