@@ -50,9 +50,9 @@ uv sync
 ```
 
 
-4. **Initialize the Database**:
+4. **Create .env**:
 ```bash
-python setup_db.py
+mv .env.example .env
 ```
 
 
